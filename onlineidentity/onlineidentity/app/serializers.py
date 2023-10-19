@@ -5,6 +5,7 @@ from .utils import Utils
 import random
 
 
+
 class StudentProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = StudentProfile
@@ -100,3 +101,11 @@ class StudentRegistrationSerializer(serializers.ModelSerializer):
     #     while StudentProfile.objects.filter(student_id=unique_id):
     #         unique_id = random.randint(10000000, 99999999)
     #     return unique_id
+
+
+class StudentProfileSerializerAlt(serializers.ModelSerializer):
+    user = UserSerializer()
+    class Meta:
+        model = StudentProfile
+        fields = '__all__'
+        depth = 1

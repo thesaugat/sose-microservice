@@ -7,7 +7,7 @@ from .. import settings
 from rest_framework import status
 from rest_framework.response import Response
 from . import models
-from .serializers import UserSerializer, StudentRegistrationSerializer
+from .serializers import UserSerializer, StudentRegistrationSerializer, StudentProfileSerializerAlt
 from rest_framework.generics import CreateAPIView, ListAPIView
 from rest_framework import generics
 
@@ -87,5 +87,8 @@ class StudentRegistrationView(CreateAPIView):
         return Response(response, status=status_code)
 
 
-# class StudentListView(generics.ListAPIView):
-#     serializer_class = StudentRegistrationSerializer
+class StudentListView(generics.ListAPIView):
+    serializer_class = UserSerializer
+
+    def get_queryset(self):
+        return models.User.objects.filter(is_student=True)
