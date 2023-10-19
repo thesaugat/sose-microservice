@@ -14,6 +14,11 @@ COPY . /app
 # Install any needed packages specified in requirements.txt
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
+RUN python manage.py migrate
+
+RUN echo "from onlineidentity.app.models import User; User.objects.create_superuser('admin@uow.com', 'SOE Admin', 'Test123')" | python manage.py shell
+RUN echo "from onlineidentity.app.models import User, StudentProfile; u=User.objects.create_user('student@uow.com',  'Stud123', name='Test Student') ; StudentProfile.objects.create(user=u, year=2023) "  | python manage.py shell
+
 
 # Expose port 8000 to the outside world
 EXPOSE 8000

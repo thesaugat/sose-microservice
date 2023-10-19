@@ -27,6 +27,7 @@ class UserManager(BaseUserManager):
         user = self.create_user(email, password, name=name, **extra_fields)
         user.is_superuser = True
         user.is_staff = True
+        user.is_student = True
         user.save(using=self._db)
         return user
 

@@ -14,6 +14,12 @@ COPY . /app
 # Install any needed packages specified in requirements.txt
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
+RUN python manage.py migrate
+
+RUN echo "from libraryservice.app.models import Books; Books.objects.create(author='Aditya Chapagain', book_name= 'Database Management System')" | python manage.py shell
+RUN echo "from libraryservice.app.models import Books; Books.objects.create(author='Sham Rodes', book_name= 'Strategic Network Design')" | python manage.py shell
+RUN echo "from libraryservice.app.models import Books; Books.objects.create(author='Jhon Mann', book_name= 'Service Oriented Software Engineering')" | python manage.py shell
+
 
 # Expose port 8000 to the outside world
 EXPOSE 8001
