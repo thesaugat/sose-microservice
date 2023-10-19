@@ -16,7 +16,7 @@ endpoints, functionalities, and instructions on building and running the project
 ### Endpoints:
 
 1. **Login**
-    - **URL:** `/login`
+    - **URL:** `is/api/login`
     - **Method:** POST
     - **Parameters:**
         - `email` (string): Email of the student
@@ -24,7 +24,7 @@ endpoints, functionalities, and instructions on building and running the project
     - **Description:** Initiates a login process, authenticating the student's account.
 
 2. **Signup**
-    - **URL:** `/signup`
+    - **URL:** `is/api/signup`
     - **Method:** POST
     - **Parameters:**
         - `email` (string): Email of the student
@@ -35,7 +35,7 @@ endpoints, functionalities, and instructions on building and running the project
     - **Description:** Creates a new student account with the provided details.
 
 3. **Student List**
-    - **URL:** `/studentlist`
+    - **URL:** `is/api/studentlist`
     - **Method:** GET
     - **Description:** Retrieves and displays the list of all students.
 
@@ -54,12 +54,12 @@ endpoints, functionalities, and instructions on building and running the project
 ### Endpoints:
 
 1. **Book List**
-    - **URL:** `/book`
+    - **URL:** `ls/api/book`
     - **Method:** GET
     - **Description:** Fetches and presents a list of available books in the library.
 
 2. **Upload Book**
-    - **URL:** `/book`
+    - **URL:** `ls/api/book`
     - **Method:** POST
     - **Parameters:**
         - `title` (string): Title of the book
@@ -67,7 +67,7 @@ endpoints, functionalities, and instructions on building and running the project
     - **Description:** Adds a new book to the library collection with the provided details.
 
 3. **Books Borrow**
-    - **URL:** `/books-borrow`
+    - **URL:** `ls/api/books-borrow`
     - **Method:** POST
     - **Parameters:**
         - `student_id` (string): ID of the student borrowing the book
@@ -79,12 +79,12 @@ endpoints, functionalities, and instructions on building and running the project
 ### Endpoints:
 
 1. **Course List**
-    - **URL:** `/course`
+    - **URL:** `cs/api/course`
     - **Method:** GET
     - **Description:** Retrieves and presents a list of available courses.
 
 2. **Upload Course**
-    - **URL:** `/course`
+    - **URL:** `cs/api/course`
     - **Method:** POST
     - **Parameters:**
         - `title` (string): Title of the course
@@ -93,7 +93,7 @@ endpoints, functionalities, and instructions on building and running the project
     - **Description:** Adds a new course to the list of available courses.
 
 3. **Course Enroll**
-    - **URL:** `/course-enroll`
+    - **URL:** `cs/api/course-enroll`
     - **Method:** POST
     - **Parameters:**
         - `student_id` (string): ID of the student enrolling in the course
