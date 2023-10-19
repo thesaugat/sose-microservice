@@ -9,6 +9,7 @@ from rest_framework.response import Response
 from . import models
 from .serializers import UserSerializer, StudentRegistrationSerializer
 from rest_framework.generics import CreateAPIView, ListAPIView
+from rest_framework import generics
 
 
 # Create your views here.
@@ -84,3 +85,7 @@ class StudentRegistrationView(CreateAPIView):
             'message': 'User registered  successfully',
         }
         return Response(response, status=status_code)
+
+
+# class StudentListView(generics.ListAPIView):
+#     serializer_class = StudentRegistrationSerializer
