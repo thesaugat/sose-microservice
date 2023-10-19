@@ -32,7 +32,7 @@ class UserManager(BaseUserManager):
         return user
 
 
-def file_size_image(value):  # add this to some file where you can import it from
+def file_size_image(value):  # file size validator
     limit = 1.5 * 1024 * 1024
     if value.size > limit:
         raise ValidationError('Image too large. Size should not exceed 1.5 MiB.')
@@ -68,15 +68,8 @@ class User(AbstractBaseUser, PermissionsMixin):
         return self.email
 
 
-#
-# class Course(models.Model):
-#     """Programmes under a faculty"""
-#     name = models.CharField(max_length=100, unique=True)
-#
-#     def __str__(self):
-#         return self.name
-#
 def create_new_ref_number():
+    """Unique Student number creator which is of 8 digits."""
     unique_id = random.randint(10000000, 99999999)
     while StudentProfile.objects.filter(student_id=unique_id):
         unique_id = random.randint(10000000, 99999999)

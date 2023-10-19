@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  container1:
+    build: ./onlineidentity
+    # Other container1 configurations
+
+  container2:
+    build: ./libraryservice
+    # Other container2 configurations
+
+  container3:
+    build: ./courseservice
+    # Other container3 configurations
